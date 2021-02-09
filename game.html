@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>caro online</title>
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="node_modules/skeleton-css/css/skeleton.css">
+		<link rel="stylesheet" href="style.css">
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu">
+				<div class="overlays">
+				<h1 class="title-game">Cờ Caro Online</h1>
+				<h3>Hướng dẫn</h3>
+				<ol>
+					<li>Người chơi 1 Tạo một trò chơi mới bằng cách nhập tên người dùng</li>
+					<li>Người chơi 2 Nhập tên người dùng khác và id phòng được hiển thị trên cửa sổ đầu tiên.</li>
+					<li>Bấm vào tham gia trò chơi. </li>
+				</ol>
+				<h4 class="title-new">Tạo game mới</h4>
+				<input type="text" name="name" id="nameNew" placeholder="Nhập tên người chơi" required>
+				<button type="button" class="btn" id="new">Game mới</button>
+				<br><br>
+				<h4 class="title-new">Vào phòng hiện có</h4>
+				<div class="wrap">
+					<input type="text" name="name" id="nameJoin" placeholder="Nhập tên người chơi" required>
+					<input type="text" name="room" id="room" placeholder="Nhập id phòng" required>
+					<button type="button" class="btn" id="join">Tham gia game</button>
+				</div>
+
+			</div>
+			</div>
+			<div class="gameBoard" style="display: none;">
+				<h1 class="title-game">Cờ Caro Online</h1>
+				<div class="title-name">
+					<h2 id="userHello"></h2>
+					<h3 id="turn"></h3>
+				</div>
+				<div class="overlay">
+				<table class="center">
+					<tr>
+						<td><button class="tile" id="button_00"></button></td>
+						<td><button class="tile" id="button_01"></button></td>
+						<td><button class="tile" id="button_02"></button></td>
+					</tr>
+					<tr>
+						<td><button class="tile" id="button_10"></button></td>
+						<td><button class="tile" id="button_11"></button></td>
+						<td><button class="tile" id="button_12"></button></td>
+					</tr>
+					<tr>
+						<td><button class="tile" id="button_20"></button></td>
+						<td><button class="tile" id="button_21"></button></td>
+						<td><button class="tile" id="button_22"></button></td>
+					</tr>
+				</table>
+				<div class="chat-container">
+
+					<div class="chat-section">
+							<div class="chat-content">
+								<div class="message">
+									<div class="message-row orther-message">
+									 <!--   <div class="message-title">
+											<span>Sy trung</span>
+										</div>
+										<div class="message-text">
+											hello
+										</div>
+										<div class="message-time">
+											November 18
+										</div>
+										 -->
+									</div>
+								   
+									<div class="message-row your-message">
+										<!--
+										<div class="message-title">
+											<span>User 01</span>
+										</div>
+										<div class="message-text">
+											ok
+										</div>
+										<div class="message-time">
+											November 18
+										</div>
+									</div>
+								-->
+								</div>
+			
+							</div>
+							<form class="msg-text">
+								<input type ='text' name ="msg" id="msg"
+								placeholder="Type message hear..." autocapitalize="off"
+								>
+								<button id="btn-send">
+									<i class="fas fa-paper-plane"> Send</i>
+								</button>
+								
+							</form>
+						</div>
+				</div>
+				</div>
+				<div class="">
+					<div class="reset-game">
+						<button type="button" class="btn-new" id="newgame">Game mới</button>
+					</div>
+					<div class="time-game">
+						<div id="countdown" class="countdown"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="client.js"></script>
+	</body>
+</html>
